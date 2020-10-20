@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Global Fonts
+
+// Global styles
+$positiv: linear-gradient(to right, #80ff72, #7ee8fa);
+$negativ: linear-gradient(to right, #fe6dad, #fc9f35);
+$neutral: linear-gradient(#8500f9, #e70eff);
+$informativ: linear-gradient(#00c6ff, #0072ff);
+$positiv-number-value: #1abcb0;
+$negativ-number-value: #e6496a;
+
+.positiv {
+  background: $positiv;
+}
+
+.negativ {
+  background-position: $negativ;
+}
+
+.neutral {
+  background: $neutral;
+}
