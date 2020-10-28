@@ -1,4 +1,6 @@
 ul.sidenav {
+  border-radius: 0 15px 0 0;
+
   .card-panel#current-rate {
     margin-top: 4em;
     border-radius: 10px;
@@ -33,10 +35,21 @@ ul.sidenav {
 
   li a {
     padding: 0px 55px;
+
+    &.call-to-action {
+      transform: transform .5s;
+    }
   }
+}
+
+div.dark-mode-copyright {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  z-index: 1000;
 
   div.slider-dark-mode {
-    margin-top: 12rem;
     label {
       color: #43424b;
       font-size: 14px;
