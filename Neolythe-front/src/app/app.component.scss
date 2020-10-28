@@ -1,6 +1,8 @@
-div#start {
-    width: 50%;
-    height: 50%;
-    margin: auto;
-    text-align: center;
+div.col.s10.content {
+    padding: 0;
+    height: 100vh;
+
+    div.content {
+        height: 100%;
+    }
 }
