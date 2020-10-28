@@ -18,10 +18,10 @@ export const routeTransitionAnimations = trigger('sideBarChoice', [
         query(':leave', animateChild()),
         group([
             query(':leave', [
-                animate('400ms ease-out', style({ top: '-100%' }))
+                animate('500ms ease-in-out', style({ transform: 'translateX(200vh)' }))
             ]),
             query(':enter', [
-                animate('400ms ease-out', style({ top: '0%' }))
+                animate('1000ms ease-in-out', style({ top: '0%' }))
             ])
         ]),
         query(':enter', animateChild()),
@@ -43,10 +43,10 @@ export const routeTransitionAnimations = trigger('sideBarChoice', [
         query(':leave', animateChild()),
         group([
             query(':leave', [
-                animate('400ms ease-out', style({ top: '100%' }))
+                animate('400ms ease-in-out', style({ transform: 'translateX(200vh)' }))
             ]),
             query(':enter', [
-                animate('400ms ease-out', style({ top: '0%' }))
+                animate('1000ms ease-in-out', style({ top: '0%' }))
             ])
         ]),
         query(':enter', animateChild()),

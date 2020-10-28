@@ -3,8 +3,25 @@
         <app-left-navbar></app-left-navbar>
     </div>
     <div class="col s10 content">
+        <nav *ngIf="isDashboardUrl()">
+            <div class="nav">
+                <a href="/" class="brand-logo">Neolythe</a>
+                <ul>
+                    <li class="active">
+                        Overview
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div class="content" [@sideBarChoice]="prepareRoute(outlet)">
             <router-outlet #outlet="outlet"></router-outlet>
         </div>
+        <footer *ngIf="!isDashboardUrl()" class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <p>Futur espace icône infos perso</p>
+                </div>
+            </div>
+        </footer>
     </div>
 </div>
