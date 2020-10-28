@@ -1,8 +1,44 @@
-div.col.s10.content {
-    padding: 0;
-    height: 100vh;
+div.row {
+    margin-bottom: 0;
 
-    div.content {
-        height: 100%;
+    div.col.s10.content {
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+    
+        nav {
+            height: 7vh;
+            line-height: 7vh;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: none;
+            z-index: 1000;
+            a, ul {
+                color: black;
+            }
+            ul {
+                margin-left: 8.5vw;
+                li.active {
+                    background-color: white;
+                    line-height: 5vh;
+                    margin-top: 2vh;
+                    border-bottom: 2px solid black;
+                }
+            }
+            
+        }
+    
+        div.content {
+            height: 92vh;
+            z-index: 0;
+        }
+
+        footer {
+            padding: 0;
+            color: black;
+            background-color: white;
+            border-radius: 5px;
+            border: 2px solid black;
+        }
     }
 }
