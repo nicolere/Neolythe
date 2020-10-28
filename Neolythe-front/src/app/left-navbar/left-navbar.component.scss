@@ -1,0 +1,62 @@
+ul.sidenav {
+  border-radius: 0 15px 0 0;
+
+  .card-panel#current-rate {
+    margin-top: 4em;
+    border-radius: 10px;
+
+    .card-content {
+      span {
+        color: white;
+      }
+      #small-title {
+        font-size: 16px;
+      }
+      #rate-sigle {
+        font-size: 21px;
+        font-weight: bold;
+      }
+      #rate-value {
+        font-size: 32px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  li {
+    width: 90%;
+    margin: auto;
+
+    &.active,
+    a:hover {
+      border-radius: 10px;
+    }
+  }
+
+  li a {
+    padding: 0px 55px;
+
+    &.call-to-action {
+      transform: transform .5s;
+    }
+  }
+}
+
+div.dark-mode-copyright {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  z-index: 1000;
+
+  div.slider-dark-mode {
+    label {
+      color: #43424b;
+      font-size: 14px;
+    }
+  }
+
+  span#copyright-text {
+    color: #a6a9b7;
+  }
+}

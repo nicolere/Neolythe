@@ -1,2 +1,10 @@
-<!-- TODO : -->
-<div id="start">TODO</div>
+<div class="row">
+    <div class="col s2">
+        <app-left-navbar></app-left-navbar>
+    </div>
+    <div class="col s10 content">
+        <div class="content" [@sideBarChoice]="prepareRoute(outlet)">
+            <router-outlet #outlet="outlet"></router-outlet>
+        </div>
+    </div>
+</div>
