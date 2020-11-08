@@ -1,8 +1,14 @@
-div.col.s10.content {
-    padding: 0;
-    height: 100vh;
+div.row {
+    margin-bottom: 0;
 
-    div.content {
-        height: 100%;
+    div.col.s10.content {
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+    
+        div.content {
+            height: 92vh;
+            z-index: 0;
+        }
     }
 }
