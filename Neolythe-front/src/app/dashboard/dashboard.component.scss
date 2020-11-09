@@ -1,29 +1,38 @@
 nav {
-    height: 7vh;
-    line-height: 7vh;
-    background-color: white;
+    height: 7.5vh;
+    line-height: 7.5vh;
     border-radius: 5px;
-    box-shadow: none;
     z-index: 1000;
-    a, ul {
-        color: black;
-    }
-    ul {
-        margin-left: 8.5vw;
-        li.active {
-            background-color: white;
-            line-height: 5vh;
-            margin-top: 2vh;
-            border-bottom: 2px solid black;
+
+    a {
+        &.sidenav-trigger {
+            height: 56px;
+        }
+        &.brand-logo {
+            font-size: 26px;
+            @media only screen and (min-width: 992px) {
+                margin-left: 0.6vw;
+            }
         }
     }
-    
+    ul {
+        @media only screen and (min-width: 992px) {
+            &.item-overview {
+                margin-left: calc(0% + 127px + 3vh);
+            }
+        }
+        li.active {
+            font-size: 14px;
+            line-height: 5vh;
+            margin-top: 2vh;
+            border-bottom: 2px solid #43424b;
+        }
+    }
 }
-
 section {
     width: 100%;
     height: 100%;
     background-color: lightgrey;
-    padding-top: 0.8em;
+    margin-top: 0.5em;
     border-radius: 10px;
 }
