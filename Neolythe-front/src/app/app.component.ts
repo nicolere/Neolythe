@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, Router } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { routeTransitionAnimations } from './route-animations-transitions';
 
 @Component({
@@ -10,12 +10,7 @@ import { routeTransitionAnimations } from './route-animations-transitions';
 })
 export class AppComponent {
 
-  constructor(private router: Router) {}
-
-  isDashboardUrl(): boolean {
-    console.log(this.router.url)
-    return (this.router.url === '/dashboard' || this.router.url !== '/about');
-  }
+  constructor() {}
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animationState'];
