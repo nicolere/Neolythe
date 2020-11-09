@@ -1,37 +1,25 @@
-<ul #SideNavBar class="sidenav sidenav-fixed">
+<ul class="sidenav sidenav-fixed hide-on-med-and-down left-navbar">
   <div class="row">
     <div class="col s10 offset-s1">
       <div class="card-panel positiv z-depth-3" id="current-rate">
         <div class="card-content">
-          <span id="small-title">Current rate</span><br />
-          <span id="rate-sigle">
-            $<span id="rate-value">1,923.46</span>
+          <span id="small-title" class="muli-b white-text">Current rate</span><br />
+          <span id="rate-sigle" class="poppins-sb white-text">
+            $<span id="rate-value" class="poppins-sb white-text">1,923.46</span>
           </span>
         </div>
       </div>
     </div>
   </div>
-  <li routerLinkActive="active">
-    <a routerLink="/dashboard"><i class="material-icons">dashboard</i>Dashboard</a>
-  </li>
-  <li>
-  <a href="#"><i class="material-icons">pie_chart</i>Charts</a>
-  </li>
-  <li>
-    <a href="#"><i class="material-icons">attach_money</i>Crypto</a>
-  </li>
-  <li>
-    <a href="#"><i class="material-icons">folder</i>Project</a>
-  </li>
-  <li routerLinkActive="active">
-    <a routerLink="/about"><i class="material-icons">info</i>About</a>
+  <li *ngFor="let link of arrayLinks" routerLinkActive="{{ link.routerLinkActive ? 'active' : '' }}">
+    <a routerLink="{{ link.routerLink }}" class="text-smoothblack poppins-m"><i class="material-icons">{{ link.iconName }}</i>{{ link.linkName }}</a>
   </li>
 </ul>
-<div class="dark-mode-copyright">
+<div class="dark-mode-copyright-content hide-on-med-and-down white">
   <div class="row slider-dark-mode">
     <div class="col s8 offset-s2">
       <div class="switch">
-        <label>
+        <label class="poppins-m text-smoothblack">
           Dark Mode
           <input type="checkbox" />
           <span class="lever"></span>
@@ -41,7 +29,7 @@
   </div>
   <div class="row">
     <div class="col s10 offset-s1">
-      <span id="copyright-text">© Copyright Personal Project</span>
+      <span id="copyright-text" class="poppins-r text-lightgrey">© Copyright Personal Project</span>
     </div>
   </div>
 </div>
