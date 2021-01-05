@@ -17,6 +17,14 @@
   font-family: "Muli-Bold";
   src: local("Muli-Bold"), url('./assets/fonts/Muli-Bold.ttf') format("truetype");
 }
+@font-face {
+  font-family: "Muli-ExtraLight - Italic";
+  src: local("Muli-ExtraLightItalic"), url('./assets/fonts/Muli-ExtraLightItalic.ttf') format("truetype");
+}
+@font-face {
+  font-family: "Adobe Garamond Pro - Italic";
+  src: local("AGaramondPro-Italic"), url('./assets/fonts/AGaramondPro-Italic.otf') format("opentype");
+}
 
 // Global color style
 $positiv: linear-gradient(to right, #80ff72, #7ee8fa);
@@ -58,6 +66,22 @@ $negativ-number-value: #e6496a;
 .muli-b {
   font-family: "Muli-Bold";
 }
+.muli-xtral-ita {
+  font-family: "Muli-ExtraLight - Italic";
+}
+.garamond-pro-ita {
+  font-family: "Adobe Garamond Pro - Italic";
+}
+
+// Global animations class
+.quote-shown {
+  opacity: 1;
+  transition: opacity .5s;
+}
+.quote-hidden {
+  opacity: 0;
+  transition: opacity .5s;
+}
 
 //Global style
 header, main, footer {
@@ -77,4 +101,10 @@ header, main, footer {
 }
 .no-padding {
   padding: 0;
+}
+.full-height {
+  height: 100%;
+}
+.half-height {
+  height: 50%;
 }
