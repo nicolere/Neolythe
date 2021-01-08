@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'theme.scss';
 
 // Global Fonts imports
 @font-face {
@@ -108,3 +108,14 @@ header, main, footer {
 .half-height {
   height: 50%;
 }
+
+.slide-toggle-dark-mode {
+  .mat-slide-toggle-content {
+    color: #43424b;
+    font-family: "Poppins-Medium";
+    font-size: 15px;
+  }
+
+}
+html, body { height: 100%; width: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
