@@ -1,8 +1,43 @@
-div.row div.main-container {
+mat-sidenav-container {
     height: 100vh;
-    overflow: hidden;
+    width: 100vw;
+
+    mat-sidenav-content {
+        overflow: hidden;
+
+        mat-sidenav {
+            width: 250px;
+            border-radius: 0 15px 0 0;
+            border-right: rgba(0, 0, 0, 0.05);
+        }
+
+        mat-toolbar {
+            border-radius: 5px;
+            background-color: white;
+
+            button {
+                margin: 0.5vh;
+                // TODO : A voir après suppression de Materialize le résultat si commenté
+                &:focus {
+                    outline: none;
+                    background-color: transparent;
+                }
+            }
+            a {
+                font-size: 25px;
+                margin-bottom: 0.7vh;
+            }
+            span.overview {
+                font-size: 14px;
+                line-height: 5vh;
+                margin-top: 2vh;
+                margin-left: 2vw;
+                border-bottom: 2px solid #43424b;
+            }
+        }
         
-    .main-content {
-        height: 100vh;
+        div.neolythe-main-content {
+            width: 100%;
+        }
     }
 }
