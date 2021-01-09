@@ -12,9 +12,10 @@
   </div>
 
   <mat-nav-list>
-    <mat-list-item *ngFor="let link of navigationLinks" routerLinkActive="{{ link.routerLinkActive ? 'active' : '' }}" class="text-smoothblack poppins-m">
+    <mat-list-item *ngFor="let link of navigationLinks" routerLink="{{ link.routerLink }}" 
+    routerLinkActive="{{ link.routerLinkActive ? 'active' : '' }}" class="text-smoothblack poppins-m">
       <mat-icon matListIcon>{{ link.iconName }}</mat-icon>
-      <a routerLink="{{ link.routerLink }}">{{ link.linkName }}</a>
+      <a>{{ link.linkName }}</a>
     </mat-list-item>
   </mat-nav-list>
 
