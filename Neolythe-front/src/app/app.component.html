@@ -1,12 +1,21 @@
-<header>
-    <app-left-navbar></app-left-navbar>
-</header>
-<main>
-    <div class="row no-margin-bottom ">
-        <div class="col s12 m12 l12 no-padding main-container">
-            <div class="main-content" [@sideBarChoice]="prepareRoute(outlet)">
+<mat-sidenav-container hasBackDrop="false">
+    <mat-sidenav #sidenav [mode]="isSmallDevice ? 'over' : 'side' ">
+        <app-left-navbar></app-left-navbar>
+    </mat-sidenav>
+    <mat-sidenav-content> 
+        <mat-toolbar class="header">
+            <button mat-icon-button  (click)="sidenav.toggle()" class="text-smoothblack">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <a href="/" class="muli-b text-smoothblack">Neolythe</a>
+            <span *ngIf="currentNavigationPath === '/dashboard'" class="overview poppins-m text-smoothblack">Overview</span>
+            <span *ngIf="currentNavigationPath === '/about'" class="overview poppins-m text-smoothblack">Informations</span>
+        </mat-toolbar>
+
+        <div fxLayout="row">
+            <div [@sideBarChoice]="prepareRoute(outlet)" class="neolythe-main-content">
                 <router-outlet #outlet="outlet"></router-outlet>
             </div>
         </div>
-    </div>
-</main>
+    </mat-sidenav-content>
+</mat-sidenav-container>
