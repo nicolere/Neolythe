@@ -3,7 +3,7 @@ import { trigger, transition, style, query, animateChild, animate, group } from 
 export const routeTransitionAnimations = trigger('sideBarChoice', [
     transition('Dashboard => About', [
         style({ position: 'relative' }),
-        query(':enter, :leave', [
+        query(':leave', [
         style({
             position: 'absolute',
             top: 0,
@@ -13,7 +13,12 @@ export const routeTransitionAnimations = trigger('sideBarChoice', [
             })
         ]),
         query(':enter', [
-            style({ top: '120%' })
+            style({
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                top: '100vh'
+            })
         ]),
         query(':leave', animateChild()),
         group([
@@ -21,14 +26,14 @@ export const routeTransitionAnimations = trigger('sideBarChoice', [
                 animate('500ms ease-in-out', style({ transform: 'translateX(200vh)' }))
             ]),
             query(':enter', [
-                animate('1000ms ease-in-out', style({ top: '0%' }))
+                animate('1000ms ease-in-out', style({ top: '0%',  }))
             ])
         ]),
         query(':enter', animateChild()),
     ]),
     transition('About => Dashboard', [
         style({ position: 'relative' }),
-        query(':enter, :leave', [
+        query(':leave', [
         style({
             position: 'absolute',
             top: 0,
@@ -38,7 +43,12 @@ export const routeTransitionAnimations = trigger('sideBarChoice', [
             })
         ]),
         query(':enter', [
-            style({ top: '-120%' })
+            style({ 
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                top: '100vh' 
+            })
         ]),
         query(':leave', animateChild()),
         group([
