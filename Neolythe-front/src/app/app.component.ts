@@ -37,7 +37,6 @@ export class AppComponent implements OnDestroy {
       filter(event => event instanceof NavigationEnd)
     )
     .subscribe((event: NavigationEnd) => {
-      console.log(event.url)
       this.currentNavigationPath = event.url;
     })
   }
