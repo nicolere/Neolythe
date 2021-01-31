@@ -1,11 +1,22 @@
 <div class="landing-cristals" fxLayout="row" fxLayout.lt-md="column">
     <div class="neolythe-about-description" fxLayout="column" fxFlex="43" fxFlexOffset.gt-sm="3" fxFlex.lt-md="40">
-        <h2 class="poppins-m description-title">{{ neolytheAboutProject.title }}</h2>
-        <div class="description-content" fxFlex fxLayout="row" fxFlexAlign="center">
+        <h2 class="poppins-m description-title">Neolythe ?</h2>
+        <div class="description-content" fxFlex fxLayout="column" fxFlexAlign="center">
             <mat-icon class="custom-quote">format_quote</mat-icon>
-            <p> {{ neolytheAboutProject.description }}</p>
+            <p>Projet personnel en cours de développement basé sur une maquette réalisée avec Adobe XD. Conçu avec 
+                <a href="https://angular.io/" target="_blank" class="positive-value">Angular</a>, 
+                <a href="https://material.angular.io/" target="_blank" class="positive-value">Angular Material</a> et 
+                <a href="https://sass-lang.com/" target="_blank" class="positive-value">SASS</a>.
+            </p>
+            <p>Cette application web a pour but de centraliser les cours du minerais (or, argent, platine, ...). Elle propose un panel de fonctionnalités 
+                pour visualiser, intéragir ou classer ces données marchandes.
+            </p>
+            <a mat-stroked-button href="https://github.com/nicolere/Neolythe" target="_blank" class="github-button">
+                Github  <mat-icon>launch</mat-icon>
+            </a>
         </div>
     </div>
+    <!-- ! Important : Tester si resposive OK  -->
     <div class="neolythe-team-description" fxFlex>
         <div *ngIf="!isSmallDevice" class="carousel-title poppins-m" fxFlexOffset.gt-sm="10">L'Equipe</div>
         <carousel fxFlexOffset.gt-sm="13" [height]='isSmallDevice ? 300 : 350' [width]='250' [cellWidth]='250' [dots]='true' [transitionDuration]="500">
@@ -22,6 +33,5 @@
                 </div>
             </div>
         </carousel>
-        <!-- TODO : Ajouter une partie détail des technos utilisées, à réfléchir -->
     </div>
 </div>
