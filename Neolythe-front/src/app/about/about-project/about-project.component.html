@@ -1,0 +1,27 @@
+<div class="landing-cristals" fxLayout="row" fxLayout.lt-md="column">
+    <div class="neolythe-about-description" fxLayout="column" fxFlex="43" fxFlexOffset.gt-sm="3" fxFlex.lt-md="40">
+        <h2 class="poppins-m description-title">{{ neolytheAboutProject.title }}</h2>
+        <div class="description-content" fxFlex fxLayout="row" fxFlexAlign="center">
+            <mat-icon class="custom-quote">format_quote</mat-icon>
+            <p> {{ neolytheAboutProject.description }}</p>
+        </div>
+    </div>
+    <div class="neolythe-team-description" fxFlex>
+        <div *ngIf="!isSmallDevice" class="carousel-title poppins-m" fxFlexOffset.gt-sm="10">L'Equipe</div>
+        <carousel fxFlexOffset.gt-sm="13" [height]='isSmallDevice ? 300 : 350' [width]='250' [cellWidth]='250' [dots]='true' [transitionDuration]="500">
+            <div class="carousel-cell" *ngFor="let collaborator of projectCollaborators">
+                <img src="{{ collaborator.picture }}" alt="{{ collaborator.name || lowercase }}" class="profil-picture">
+                <span class="poppins-sb carousel-cell-name">{{ collaborator.name }}</span><br *ngIf="!isSmallDevice" /> 
+                {{ isSmallDevice ? '-' : '' }}
+                <span class="carousel-cell-description">{{ collaborator.description }}</span>
+                <div class="social-links">
+                    <a *ngFor="let link of collaborator.links" href="{{ link.url }}">
+                        <mat-icon *ngIf="link.name === 'Email'" class="social-links--item">email</mat-icon>
+                        <img *ngIf="link.name !== 'Email'" class="social-links--item" src="{{ link.icon }}" alt="{{ link.name || lowercase }}">
+                    </a>
+                </div>
+            </div>
+        </carousel>
+        <!-- TODO : Ajouter une partie détail des technos utilisées, à réfléchir -->
+    </div>
+</div>
