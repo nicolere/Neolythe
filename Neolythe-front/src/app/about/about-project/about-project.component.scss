@@ -18,7 +18,7 @@ div.landing-cristals {
     }
 
     div.neolythe-about-description {
-        height: 35%;
+        height: 42%;
 
         @media screen and (min-width: 960px) {
             margin-top: 10vh !important;
@@ -34,20 +34,42 @@ div.landing-cristals {
 
         div.description-content {
             width: 95%;
-            border-radius: 15px;
+            border-radius: 15px 0 0 15px;
             background-color: rgba(0,0,0,0.07);
+            white-space: pre-wrap;
+            overflow: auto;
+            text-overflow: ellipsis;
+
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: transparent;
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background-color: #555;
+            }
+            mat-icon.custom-quote {
+                color: rgba(0,0,0,0.2);
+                margin-left: 0.3rem;
+                font-size: 2.6rem;
+            }
 
             p {
-                font-size: 17px;
-                padding: 10px 20px;
+                font-size: 16px;
+                padding: 0.7rem 2rem;
+                
             }
-
-            .custom-quote {
-                color: rgba(0,0,0,0.2);
-                margin-left: 3px;
-                font-size: 33px;
+            a.github-button {
+                width: 26%;
+                margin-left: 1.8em;
+                margin-bottom: 1em;
+                
+                mat-icon {
+                    margin-left: 0.5em;
+                }
             }
-
         }
     }
     div.neolythe-team-description {
@@ -86,13 +108,13 @@ div.landing-cristals {
                         margin-bottom: 1vh;
 
                         mat-icon.social-links--item {
-                            font-size: 32px;
+                            font-size: 1.9rem;
                         }
                         .social-links--item {
                             margin-top: 0.2rem;
                             color: white;
-                            width: 32px;
-                            height: 32px;
+                            width: 2.1rem;
+                            height: 2.1rem;
                             transition: transform .2s;
 
                             &:hover {
