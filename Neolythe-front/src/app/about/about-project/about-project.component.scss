@@ -1,0 +1,107 @@
+div.landing-cristals {
+    border-radius: 10px;
+    height: 70vh;
+    width: 100vw;
+    position: relative;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+
+    &:before {
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-image: url(./../../../assets/img/cristals-image.jpg);
+        background-size: cover;
+        content: "";
+        z-index: -1;
+    }
+
+    div.neolythe-about-description {
+        height: 35%;
+
+        @media screen and (min-width: 960px) {
+            margin-top: 10vh !important;
+        }
+        margin-top: 4vh;
+
+        h2.description-title {
+            width: 100%;
+            font-family: "Poppins-Medium";
+            margin: 1vh 14vw;
+            font-size: 2em;
+        }
+
+        div.description-content {
+            width: 95%;
+            border-radius: 15px;
+            background-color: rgba(0,0,0,0.07);
+
+            p {
+                font-size: 17px;
+                padding: 10px 20px;
+            }
+
+            .custom-quote {
+                color: rgba(0,0,0,0.2);
+                margin-left: 3px;
+                font-size: 33px;
+            }
+
+        }
+    }
+    div.neolythe-team-description {
+        div.carousel-title {
+            width: 8vw;
+            height: 3vh;
+            margin-top: 5.5vh;
+            position: absolute;
+            font-size: 2.6em;
+
+            @media screen and (max-width: 960px) {
+                margin-left: 1.8vw;
+                font-size: 1.8em;
+            }
+        }
+
+        carousel {
+            @media screen and (min-width: 960px) {
+                margin-top: 11vh !important;
+            }
+            @media screen and (max-width: 960px) {
+                margin-top: 0.8em !important;
+                margin-left: 17vw;
+            }
+            div.carousel-cell {
+                opacity: 0.8;
+                text-align: center;
+
+                img.profil-picture {
+                    height: 71%;
+                    border-radius: 3em 3em 5rem 5rem;
+                }
+                div.social-links {
+                    a {
+                        margin-left: 1vh;
+                        margin-bottom: 1vh;
+
+                        mat-icon.social-links--item {
+                            font-size: 32px;
+                        }
+                        .social-links--item {
+                            margin-top: 0.2rem;
+                            color: white;
+                            width: 32px;
+                            height: 32px;
+                            transition: transform .2s;
+
+                            &:hover {
+                                transform: scale(1.25);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
