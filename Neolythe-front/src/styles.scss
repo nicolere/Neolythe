@@ -74,24 +74,10 @@ $negativ-number-value: #e6496a;
 }
 
 // Global animations class
-.quote-shown {
-  opacity: 1;
-  transition: opacity .5s;
-}
-.quote-hidden {
-  opacity: 0;
-  transition: opacity .5s;
-}
 
 //Global style
-header, main, footer {
-  padding-left: 300px;
-}
-@media only screen and (max-width: 992px) {
-  header, main, footer {
-    padding-left: 0;
-  }
-}
+html, body { height: 100%; width: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .no-margin-bottom {
   margin-bottom: 0;
@@ -115,7 +101,8 @@ header, main, footer {
     font-family: "Poppins-Medium";
     font-size: 15px;
   }
-
 }
-html, body { height: 100%; width: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.carousel-dots {
+  bottom: -1vh !important;
+}
