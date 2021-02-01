@@ -79,11 +79,6 @@ div.landing-cristals {
             margin-top: 5.5vh;
             position: absolute;
             font-size: 2.6em;
-
-            @media screen and (max-width: 960px) {
-                margin-left: 1.8vw;
-                font-size: 1.8em;
-            }
         }
 
         carousel {
@@ -100,7 +95,12 @@ div.landing-cristals {
 
                 img.profil-picture {
                     height: 71%;
-                    border-radius: 3em 3em 5rem 5rem;
+                    @media screen and (max-width: 960px) {
+                        border-radius: 52% 48% 49% 51% / 40% 40% 60% 60%  ;
+                    }
+                    @media screen and (min-width: 960px) {
+                        border-radius: 3em 3em 5rem 5rem;
+                    }
                 }
                 div.social-links {
                     a {
