@@ -16,10 +16,9 @@
             </a>
         </div>
     </div>
-    <!-- ! Important : Tester si resposive OK  -->
     <div class="neolythe-team-description" fxFlex>
-        <div *ngIf="!isSmallDevice" class="carousel-title poppins-m" fxFlexOffset.gt-sm="10">L'Equipe</div>
-        <carousel fxFlexOffset.gt-sm="13" [height]='isSmallDevice ? 300 : 350' [width]='250' [cellWidth]='250' [dots]='true' [transitionDuration]="500">
+        <div *ngIf="!isSmallDevice" class="carousel-title poppins-m" fxFlexOffset.gt-sm="19">L'Equipe</div>
+        <carousel fxFlexOffset.gt-xs="30" fxFlexOffset.xs="20" [height]='isSmallDevice ? 300 : 350' [width]='250' [cellWidth]='250' [dots]='true' [transitionDuration]="500">
             <div class="carousel-cell" *ngFor="let collaborator of projectCollaborators">
                 <img src="{{ collaborator.picture }}" alt="{{ collaborator.name || lowercase }}" class="profil-picture">
                 <span class="poppins-sb carousel-cell-name">{{ collaborator.name }}</span><br *ngIf="!isSmallDevice" /> 
