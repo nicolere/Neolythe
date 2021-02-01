@@ -23,9 +23,9 @@ export class AppComponent implements OnDestroy {
   constructor(private router: Router, private screenObserverService: ScreenObserverService) {
     this.watcher = screenObserverService.getActiveMediaQuery()
     .subscribe((changes: string[]) => {
-          changes.includes('sm') || changes.includes('xs') 
-          ? this.isSmallDevice = true
-          : this.isSmallDevice = false   
+        changes.includes('md') || changes.includes('sm') || changes.includes('xs') 
+        ? this.isSmallDevice = true
+        : this.isSmallDevice = false   
       });
 
     router.events
