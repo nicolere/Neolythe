@@ -2,6 +2,17 @@ section#neolythe-about{
     width: 100%;
     height: 92.5vh;
     margin: 0.3em 0;
-    border: 1px solid #43424b;
+    position: relative;
     border-radius: 10px;
+
+    &:before {
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-image: url(./../../assets/img/cristals-image.jpg);
+        background-size: cover;
+        content: "";
+        z-index: -1;
+    }
 }
