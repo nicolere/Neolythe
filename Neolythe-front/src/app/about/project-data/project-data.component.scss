@@ -7,15 +7,19 @@ div.projects-data {
         height: 11em;
         border-radius: 5px;
 
-        mat-card-header  div.header-avatar {
-            height: 20%;
+        mat-card-header  {
+            display: flex;
+            justify-content: center;
 
-            mat-icon {
-                height: 100%;
-                width: 100%;
-                margin-left: 100%;
-                font-size: 3.5em;
-                color: #43424b;
+            div.header-avatar {
+                height: 80%;
+                width: 32%;
+                margin-left: 2em;
+    
+                mat-icon {
+                    font-size: 3.5em;
+                    color: #43424b;
+                }
             }
         }
         mat-card-content.card-data-content {
