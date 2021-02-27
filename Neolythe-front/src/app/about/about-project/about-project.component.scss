@@ -1,24 +1,11 @@
-div.landing-cristals {
+div.landing-cristals-about {
     border-radius: 10px;
-    height: 70vh;
-    width: 100vw;
-    position: relative;
-    background-color: rgba(0,0,0,0.4);
+    height: 68%;
+    width: 100%;
     color: #fff;
 
-    &:before {
-        border-radius: 10px;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        background-image: url(./../../../assets/img/cristals-image.jpg);
-        background-size: cover;
-        content: "";
-        z-index: -1;
-    }
-
     div.neolythe-about-description {
-        height: 42%;
+        height: 50%;
 
         @media screen and (min-width: 960px) {
             margin-top: 10vh !important;
@@ -35,7 +22,7 @@ div.landing-cristals {
         div.description-content {
             width: 95%;
             border-radius: 15px 0 0 15px;
-            background-color: rgba(0,0,0,0.07);
+            background-color: rgba(0,0,0,0.09);
             white-space: pre-wrap;
             overflow: auto;
             text-overflow: ellipsis;
@@ -81,7 +68,7 @@ div.landing-cristals {
             font-size: 2.6em;
         }
 
-        carousel {
+        carousel#faces-carousel {
             @media screen and (min-width: 960px) {
                 margin-top: 11vh !important;
             }
@@ -90,7 +77,7 @@ div.landing-cristals {
                 margin-left: 17vw;
             }
             div.carousel-cell {
-                opacity: 0.8;
+                opacity: 0.9;
                 text-align: center;
 
                 img.profil-picture {
@@ -102,24 +89,21 @@ div.landing-cristals {
                         border-radius: 3em 3em 5rem 5rem;
                     }
                 }
-                div.social-links {
-                    a {
-                        margin-left: 1vh;
-                        margin-bottom: 1vh;
+                div.social-links a {
+                    margin-left: 1vh;
 
-                        mat-icon.social-links--item {
-                            font-size: 1.9rem;
-                        }
-                        .social-links--item {
-                            margin-top: 0.2rem;
-                            color: white;
-                            width: 2.1rem;
-                            height: 2.1rem;
-                            transition: transform .2s;
+                    mat-icon.social-links--item {
+                        font-size: 1.9rem;
+                    }
+                    .social-links--item {
+                        margin-top: 0.2rem;
+                        color: white;
+                        width: 2.1rem;
+                        height: 2.1rem;
+                        transition: transform .2s;
 
-                            &:hover {
-                                transform: scale(1.25);
-                            }
+                        &:hover {
+                            transform: scale(1.25);
                         }
                     }
                 }
