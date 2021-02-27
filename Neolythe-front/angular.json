@@ -28,11 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "materialize-src/sass/materialize.scss",
               "src/styles.scss"
             ],
             "scripts": [
-              "materialize-src/js/bin/materialize.min.js",
               "node_modules/jquery/dist/jquery.min.js"
             ]
           },
