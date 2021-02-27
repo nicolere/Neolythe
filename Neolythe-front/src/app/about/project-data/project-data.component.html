@@ -1,3 +1,21 @@
-<div class="data-projects">
-    TODO Projects data + animations 
+<div class="projects-data" fxLayout="row" fxLayoutAlign="space-around center" #divData>
+    <mat-card class="card-data" *ngFor="let data of projectData">
+        <mat-card-header class="card-data-header">
+            <div mat-card-avatar class="header-avatar">
+                <mat-icon>{{ data.icon }}</mat-icon>
+            </div>
+        </mat-card-header>
+        <mat-card-content fxLayout="column" class="card-data-content">
+            <div class="data-content-info">
+                <h4>{{ data.title }}</h4>
+                <div class="total-and-percent" fxLayout="row">
+                    <span [appAnimatedCounter]="data.total" [delay]="data.delay"></span>
+                    <mat-icon *ngIf="!data.state" class="negative-value">keyboard_arrow_down</mat-icon>
+                    <mat-icon *ngIf="data.state" class="positive-value">keyboard_arrow_up</mat-icon>
+                    <span class="percent" [ngClass]="{'positive-value': data.state, 'negative-value':!data.state}" 
+                    [appAnimatedCounter]="data.evolution" [delay]="1300">%</span>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>

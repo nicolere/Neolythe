@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutProjectComponent } from './about/about-project/about-project.component';
 import { ProjectDataComponent } from './about/project-data/project-data.component';
+import { AnimatedCounterDirective } from './directives/animated-counter.directive';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ProjectDataComponent } from './about/project-data/project-data.componen
     DashboardComponent,
     AboutProjectComponent,
     ProjectDataComponent,
+    AnimatedCounterDirective
   ],
   imports: [
     BrowserModule,
