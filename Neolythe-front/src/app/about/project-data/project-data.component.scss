@@ -1,4 +1,44 @@
-div.data-projects {
-    height: 30%;
-    background-color: lightcyan;
+div.projects-data {
+    height: 32%;
+    
+    mat-card.card-data {
+        padding: 10px;
+        width: 11em;
+        height: 11em;
+        border-radius: 5px;
+
+        mat-card-header  div.header-avatar {
+            height: 20%;
+
+            mat-icon {
+                height: 100%;
+                width: 100%;
+                margin-left: 100%;
+                font-size: 3.5em;
+                color: #43424b;
+            }
+        }
+        mat-card-content.card-data-content {
+            height: 60%;
+            align-items: center;
+            
+            div.data-content-info {
+                margin: auto;
+
+                h4 {
+                    color: #616161;
+                    margin: 0.4em;
+                }
+                div.total-and-percent {
+                    span {
+                        font-size: 1.8em;
+                    }
+                    span.percent {
+                        padding-top: 0.2em;
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
 }
