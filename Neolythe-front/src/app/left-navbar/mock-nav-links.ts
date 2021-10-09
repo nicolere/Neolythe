@@ -1,9 +1,4 @@
-interface NavLinks {
-    routerLinkActive: boolean;
-    routerLink: string;
-    iconName: string;
-    linkName: string;
-}
+import { NavLinks } from "./left-navbar.model";
 
 export const NAVIGATION_LINKS: NavLinks[] = [
     {

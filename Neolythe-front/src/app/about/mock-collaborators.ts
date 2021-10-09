@@ -1,15 +1,4 @@
-export interface Collaborator {
-  picture: string;
-  name: string;
-  description: string;
-  links: SocialLink[];
-}
-
-interface SocialLink {
-  name: string;
-  icon: string;
-  url: string;
-}
+import { Collaborator } from "./about.model";
 
 // TODO : Ajuster les liens et img
 export const PROJECT_COLLABORATORS: Collaborator[] = [

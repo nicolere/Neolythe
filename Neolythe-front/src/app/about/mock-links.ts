@@ -1,10 +1,6 @@
-interface SocialLink {
-    name: string;
-    url: string;
-    iconPath: string;
-}
+import { PersonalSocialLink } from "./about.model";
 
-export const PERSONAL_SOCIAL_LINKS: SocialLink[] = [
+export const PERSONAL_SOCIAL_LINKS: PersonalSocialLink[] = [
     {
         name: 'LinkedIn',
         url: 'https://www.linkedin.com/in/nicolas-gau/',

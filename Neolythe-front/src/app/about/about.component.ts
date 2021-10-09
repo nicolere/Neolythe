@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ScreenObserverService } from '../service/screen-observer.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-about',
@@ -9,11 +8,10 @@ import { Subscription } from 'rxjs';
 })
 export class AboutComponent implements OnInit {
 
-  watcher: Subscription;
   public isSmallDevice: boolean = false;
 
-  constructor(private screenObserverService: ScreenObserverService) {
-    this.watcher = screenObserverService.getActiveMediaQuery()
+  constructor(screenObserverService: ScreenObserverService) {
+    screenObserverService.getActiveMediaQuery()
     .subscribe((changes: string[]) => {
           changes.includes('sm') || changes.includes('xs') 
           ? this.isSmallDevice = true
@@ -21,6 +19,6 @@ export class AboutComponent implements OnInit {
       });
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 }

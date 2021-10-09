@@ -24,7 +24,7 @@ export class AnimatedCounterDirective implements OnInit, OnDestroy {
         private renderer: Renderer2
     ) {}
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         if(!!this.el.nativeElement.textContent) {
             this.staticText = this.el.nativeElement.textContent;
         }
@@ -36,12 +36,17 @@ export class AnimatedCounterDirective implements OnInit, OnDestroy {
         timer(this.delay || 0)
             .pipe(takeUntil(this.$destroyed))
             .subscribe({
-                complete: () => this.animate()
+                complete: () => this._animate()
             })
     }
 
-    private animate(): void {
-        if(this.value && this.safeValidation(this.value)){
+    public ngOnDestroy(): void {
+        this.$destroyed.next();
+        this.$destroyed.complete();
+    }
+
+    private _animate(): void {
+        if(this.value && this._safeValidation(this.value)){
             const start = () => {
                 if(this.startingValue < this.value){
                     this.startingValue++
@@ -53,12 +58,7 @@ export class AnimatedCounterDirective implements OnInit, OnDestroy {
         }
     }
 
-    private safeValidation(value: number): boolean {
+    private _safeValidation(value: number): boolean {
         return typeof value === 'number';
-    }
-
-    ngOnDestroy(): void {
-        this.$destroyed.next();
-        this.$destroyed.complete();
     }
 }

@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { MediaObserver, MediaChange } from "@angular/flex-layout";
-import { Observable, Subscription } from "rxjs";
-import { distinctUntilChanged, tap, map, filter } from 'rxjs/operators';
+import { Observable } from "rxjs";
+import { distinctUntilChanged, tap, map } from 'rxjs/operators';
 
 @Injectable()
 export class ScreenObserverService {
@@ -10,7 +10,7 @@ export class ScreenObserverService {
 
     constructor(private mediaObserver: MediaObserver){}
 
-    getActiveMediaQuery() {
+    public getActiveMediaQuery(): Observable<string[]> {
         return this.mediaObserver.asObservable()
         .pipe(
         distinctUntilChanged((prev: MediaChange[], curr: MediaChange[]) => prev[0].mqAlias === curr[0].mqAlias),

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, AfterViewInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, Input, AfterViewInit, ViewChild, OnInit} from '@angular/core';
 import { PROJECT_COLLABORATORS } from './../mock-collaborators';
 import { gsap } from 'gsap';
 
@@ -7,7 +7,7 @@ import { gsap } from 'gsap';
   templateUrl: './about-project.component.html',
   styleUrls: ['./about-project.component.scss']
 })
-export class AboutProjectComponent implements AfterViewInit {
+export class AboutProjectComponent implements OnInit, AfterViewInit {
 
   @Input() isSmallDevice: boolean;
   @ViewChild('divDescription', {static: false}) el: ElementRef<HTMLDivElement>;
@@ -16,7 +16,10 @@ export class AboutProjectComponent implements AfterViewInit {
 
   constructor() { }
 
-  ngAfterViewInit(): void {
+  public ngOnInit(): void {
+  }
+
+  public ngAfterViewInit(): void {
     gsap.from(this.el.nativeElement.children, {
       delay: 1,
       autoAlpha: 0,

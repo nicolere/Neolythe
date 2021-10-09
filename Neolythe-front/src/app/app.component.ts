@@ -14,14 +14,13 @@ import { ScreenObserverService } from './service/screen-observer.service';
 })
 export class AppComponent implements OnDestroy {
 
-  watcher: Subscription;
-  activeMediaQuery: any = [];
+  private _watcher: Subscription;
 
   public isSmallDevice: boolean = false;
   public currentNavigationPath: string = "";
   
   constructor(private router: Router, private screenObserverService: ScreenObserverService) {
-    this.watcher = screenObserverService.getActiveMediaQuery()
+    this._watcher = screenObserverService.getActiveMediaQuery()
     .subscribe((changes: string[]) => {
         changes.includes('md') || changes.includes('sm') || changes.includes('xs') 
         ? this.isSmallDevice = true
@@ -37,11 +36,11 @@ export class AppComponent implements OnDestroy {
     })
   }
 
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animationState'];
+  public ngOnDestroy(): void {
+    this._watcher.unsubscribe();
   }
 
-  ngOnDestroy(): void {
-    this.watcher.unsubscribe();
+  public prepareRoute(outlet: RouterOutlet): boolean {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animationState'];
   }
 }
