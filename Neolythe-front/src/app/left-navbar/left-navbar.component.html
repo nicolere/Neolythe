@@ -1,35 +1,30 @@
-<ul class="sidenav sidenav-fixed hide-on-med-and-down left-navbar">
-  <div class="row">
-    <div class="col s10 offset-s1">
-      <div class="card-panel positiv z-depth-3" id="current-rate">
-        <div class="card-content">
-          <span id="small-title" class="muli-b white-text">Current rate</span><br />
-          <span id="rate-sigle" class="poppins-sb white-text">
-            $<span id="rate-value" class="poppins-sb white-text">1,923.46</span>
-          </span>
-        </div>
-      </div>
-    </div>
+<div fxLayout="column" class="left-navbar">
+
+  <div fxLayout="row">
+    <mat-card id="current-rate" class="positiv" fxFlex="77" fxFlexOffset="10">
+      <mat-card-content>
+        <p id="small-title" class="muli-b text-white">Current rate</p>
+        <span id="rate-sigle" class="poppins-sb text-white">
+          $<span id="rate-value" class="poppins-sb text-white">1,923.46</span>
+        </span>
+      </mat-card-content>
+    </mat-card>
   </div>
-  <li *ngFor="let link of arrayLinks" routerLinkActive="{{ link.routerLinkActive ? 'active' : '' }}">
-    <a routerLink="{{ link.routerLink }}" class="text-smoothblack poppins-m"><i class="material-icons">{{ link.iconName }}</i>{{ link.linkName }}</a>
-  </li>
-</ul>
-<div class="dark-mode-copyright-content hide-on-med-and-down white">
-  <div class="row slider-dark-mode">
-    <div class="col s8 offset-s2">
-      <div class="switch">
-        <label class="poppins-m text-smoothblack">
-          Dark Mode
-          <input type="checkbox" />
-          <span class="lever"></span>
-        </label>
-      </div>
+
+  <mat-nav-list>
+    <mat-list-item *ngFor="let link of navigationLinks" routerLink="{{ link.routerLink }}" 
+    routerLinkActive="{{ link.routerLinkActive ? 'active' : '' }}" class="text-smoothblack poppins-m">
+      <mat-icon matListIcon>{{ link.iconName }}</mat-icon>
+      <a>{{ link.linkName }}</a>
+    </mat-list-item>
+  </mat-nav-list>
+
+  <section fxFlex class="dark-mode-copyright-content">
+    <div id="slider-and-copyright">
+      <mat-slide-toggle fxFlex="66" fxFlexOffset="20" color="green" class="slide-toggle-dark-mode">Dark Mode</mat-slide-toggle>
     </div>
-  </div>
-  <div class="row">
-    <div class="col s10 offset-s1">
-      <span id="copyright-text" class="poppins-r text-lightgrey">© Copyright Personal Project</span>
+    <div>
+      <p id="copyright-text" fxFlex="81" fxFlexOffset="9" class="poppins-r text-lightgrey">© Copyright Personal Project</p>
     </div>
-  </div>
+  </section>
 </div>

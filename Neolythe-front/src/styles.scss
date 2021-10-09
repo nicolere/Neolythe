@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'theme.scss';
 
 // Global Fonts imports
 @font-face {
@@ -46,6 +46,17 @@ $negativ-number-value: #e6496a;
   background: $neutral;
 }
 
+.positive-value {
+  color: $positiv-number-value;
+}
+
+.negative-value {
+  color: $negativ-number-value;
+}
+
+.text-white {
+  color: white;
+}
 .text-lightgrey {
   color: #a6a9b7;
 }
@@ -74,37 +85,19 @@ $negativ-number-value: #e6496a;
 }
 
 // Global animations class
-.quote-shown {
-  opacity: 1;
-  transition: opacity .5s;
-}
-.quote-hidden {
-  opacity: 0;
-  transition: opacity .5s;
-}
 
 //Global style
-header, main, footer {
-  padding-left: 300px;
-}
-@media only screen and (max-width: 992px) {
-  header, main, footer {
-    padding-left: 0;
+html, body { height: 100%; width: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.slide-toggle-dark-mode {
+  .mat-slide-toggle-content {
+    color: #43424b;
+    font-family: "Poppins-Medium";
+    font-size: 15px;
   }
 }
 
-.no-margin-bottom {
-  margin-bottom: 0;
-}
-.no-box-shadow {
-  box-shadow: none;
-}
-.no-padding {
-  padding: 0;
-}
-.full-height {
-  height: 100%;
-}
-.half-height {
-  height: 50%;
+.carousel-dots {
+  bottom: -1vh !important;
 }

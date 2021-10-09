@@ -1,0 +1,48 @@
+div.projects-data {
+    height: 32%;
+    
+    mat-card.card-data {
+        padding: 10px;
+        width: 11em;
+        height: 11em;
+        border-radius: 5px;
+
+        mat-card-header  {
+            display: flex;
+            justify-content: center;
+
+            div.header-avatar {
+                height: 80%;
+                width: 32%;
+                margin-left: 2em;
+    
+                mat-icon {
+                    font-size: 3.5em;
+                    color: #43424b;
+                }
+            }
+        }
+        mat-card-content.card-data-content {
+            height: 60%;
+            align-items: center;
+            
+            div.data-content-info {
+                margin: auto;
+
+                h4 {
+                    color: #616161;
+                    margin: 0.4em;
+                }
+                div.total-and-percent {
+                    span {
+                        font-size: 1.8em;
+                    }
+                    span.percent {
+                        padding-top: 0.2em;
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+}

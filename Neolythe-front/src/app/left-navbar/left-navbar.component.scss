@@ -1,12 +1,16 @@
-ul.sidenav.left-navbar {
-  border-radius: 0 15px 0 0;
+div.left-navbar {
+  width: 250px;
+  height: 100%;
 
-  .card-panel#current-rate {
-    margin-top: 4em;
+  mat-card#current-rate {
+    margin-top: 3vh;
     border-radius: 10px;
-    padding: 10px 40px;
-
-    .card-content {
+    padding: 14px;
+    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14),
+              0 3px 14px 2px rgba(0,0,0,0.12),
+              0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  
+    mat-card-content {
       #small-title {
         font-size: 15px;
       }
@@ -19,33 +23,39 @@ ul.sidenav.left-navbar {
     }
   }
 
-  li {
-    width: 90%;
-    margin: auto;
+  mat-nav-list {
+    margin-top: 3vh;
 
-    &.active,
-    a:hover {
-      border-radius: 10px;
-    }
-    a {
-      font-size: 13px;
-      padding: 0px 55px;
+    mat-list-item {
+      width: 90%;
+      margin: auto;
+      
+      &.active {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+      &.active,
+      &:hover {
+        border-radius: 10px;
+      }
+      mat-icon {
+        margin-right: 2vw;
+      }
     }
   }
-}
-div.dark-mode-copyright-content {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 300px;
-  z-index: 1000;
-  border-radius: 8px 8px 0 0;
 
-  div.slider-dark-mode label {
-    font-size: 13px;
-  }
-  span#copyright-text {
-    margin-left: 1em;
-    font-size: 12px;
+  section.dark-mode-copyright-content {
+    div#slider-and-copyright {
+      margin-top: 42.5vh;
+
+      mat-slide-toggle.dark-mode {
+        label span.mat-slide-toggle-content {
+          font-size: 13px;
+        }
+      }
+    }
+    p#copyright-text {
+      margin-top: 4vh;
+      font-size: 12px;
+    }
   }
 }
