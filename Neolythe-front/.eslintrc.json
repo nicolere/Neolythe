@@ -1,0 +1,40 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "parserOptions": {
+    "project": [
+      "**/tsconfig.json"
+    ],
+    "createDefaultProgram": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends" : [
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "plugin:@angular-eslint/ng-cli-compat",
+    "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+    "plugin:@angular-eslint/template/process-inline-templates",
+    "plugin:@angular-eslint/template/recommended"
+  ],
+  "rules": {
+    "@angular-eslint/component-selector": [
+      "error",
+      {
+        "type": "element",
+        "prefix": "app",
+        "style": "kebab-case"
+      }
+    ],
+    "@angular-eslint/directive-selector": [
+      "error",
+      {
+        "type": "attribute",
+        "prefix": "app",
+        "style": "camelCase"
+      }
+    ]
+  }
+}

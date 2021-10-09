@@ -1,4 +1,4 @@
-import { ProjectData } from "../about.model";
+import { ProjectData } from '../about.model';
 
 export const PROJECT_DATA: ProjectData[] = [
     {
@@ -25,4 +25,4 @@ export const PROJECT_DATA: ProjectData[] = [
         evolution: 24,
         delay: 1100
     }
-]
+];
