@@ -14,9 +14,12 @@ export class AboutProjectComponent implements OnInit, AfterViewInit {
 
   public projectCollaborators = PROJECT_COLLABORATORS;
 
-  constructor() { }
+  constructor() {
+    // Empty constructor
+   }
 
   public ngOnInit(): void {
+    //
   }
 
   public ngAfterViewInit(): void {

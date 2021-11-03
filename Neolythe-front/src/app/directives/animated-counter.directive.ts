@@ -2,7 +2,7 @@ import { Directive, ElementRef, Input, OnDestroy, OnInit, Renderer2 } from '@ang
 import { Subject, timer } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-const DEFAULT_ANIMATION_SPEED: number = 8;
+const DEFAULT_ANIMATION_SPEED = 8;
 
 @Directive({
     selector: '[appAnimatedCounter]'
@@ -11,26 +11,31 @@ const DEFAULT_ANIMATION_SPEED: number = 8;
 export class AnimatedCounterDirective implements OnInit, OnDestroy {
 
     @Input('appAnimatedCounter') value: number;
-    @Input() delay: number = 0;
+    @Input() delay = 0;
     @Input() speed: number = DEFAULT_ANIMATION_SPEED;
 
     staticText: string;
 
     private $destroyed = new Subject<void>();
-    private startingValue: number = 0;
+    private startingValue = 0;
+    private _el: ElementRef<HTMLElement>;
+    private _renderer: Renderer2;
 
     constructor(
         private el: ElementRef<HTMLElement>, 
         private renderer: Renderer2
-    ) {}
+    ) {
+        this._el = el;
+        this._renderer = renderer;
+    }
 
     public ngOnInit(): void {
-        if(!!this.el.nativeElement.textContent) {
-            this.staticText = this.el.nativeElement.textContent;
+        if(!this._el.nativeElement.textContent) {
+            this.staticText = this._el.nativeElement.textContent;
         }
 
         if(this.delay > 0){
-            this.renderer.setProperty(this.el.nativeElement, 'textContent', this.startingValue);
+            this._renderer.setProperty(this._el.nativeElement, 'textContent', this.startingValue);
         }
 
         timer(this.delay || 0)
@@ -50,7 +55,8 @@ export class AnimatedCounterDirective implements OnInit, OnDestroy {
             const start = () => {
                 if(this.startingValue < this.value){
                     this.startingValue++
-                    this.renderer.setProperty(this.el.nativeElement, 'textContent', `${this.startingValue}${this.staticText ? this.staticText : ''}`);
+                    this._renderer.setProperty(this._el.nativeElement, 'textContent', 
+                    `${this.startingValue}${this.staticText ? this.staticText : ''}`);
                     setTimeout(start, this.speed);
                 }
             };

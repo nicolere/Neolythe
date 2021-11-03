@@ -6,12 +6,15 @@ import { distinctUntilChanged, tap, map } from 'rxjs/operators';
 @Injectable()
 export class ScreenObserverService {
 
-    private activeMediaQuery: any = [];
+    private activeMediaQuery: string[][] = [];
+    private _mediaObserver: MediaObserver;
 
-    constructor(private mediaObserver: MediaObserver){}
+    constructor(private mediaObserver: MediaObserver){
+        this._mediaObserver = mediaObserver;
+    }
 
     public getActiveMediaQuery(): Observable<string[]> {
-        return this.mediaObserver.asObservable()
+        return this._mediaObserver.asObservable()
         .pipe(
         distinctUntilChanged((prev: MediaChange[], curr: MediaChange[]) => prev[0].mqAlias === curr[0].mqAlias),
         map((arr: MediaChange[]) => arr.map((change: MediaChange) => change.mqAlias)),

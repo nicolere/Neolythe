@@ -10,9 +10,12 @@ export class LeftNavbarComponent implements OnInit {
 
   public navigationLinks = NAVIGATION_LINKS;
 
-  constructor() {}
+  constructor() {
+    // Empty constructor
+  }
 
   public ngOnInit(): void {
+    //
   }
 
 }

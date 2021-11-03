@@ -8,7 +8,7 @@ import { ScreenObserverService } from '../service/screen-observer.service';
 })
 export class AboutComponent implements OnInit {
 
-  public isSmallDevice: boolean = false;
+  public isSmallDevice = false;
 
   constructor(screenObserverService: ScreenObserverService) {
     screenObserverService.getActiveMediaQuery()
@@ -20,5 +20,6 @@ export class AboutComponent implements OnInit {
   }
 
   public ngOnInit(): void {
+    // 
   }
 }

@@ -16,8 +16,8 @@ export class AppComponent implements OnDestroy {
 
   private _watcher: Subscription;
 
-  public isSmallDevice: boolean = false;
-  public currentNavigationPath: string = "";
+  public isSmallDevice = false;
+  public currentNavigationPath = "";
   
   constructor(private router: Router, private screenObserverService: ScreenObserverService) {
     this._watcher = screenObserverService.getActiveMediaQuery()

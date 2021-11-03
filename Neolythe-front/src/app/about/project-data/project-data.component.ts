@@ -13,9 +13,12 @@ export class ProjectDataComponent implements OnInit, AfterViewInit {
 
   public projectData = PROJECT_DATA;
 
-  constructor() { }
+  constructor() {
+    // Empty constructor
+   }
   
   public ngOnInit(): void {
+    //
   }
 
   public ngAfterViewInit(): void {
