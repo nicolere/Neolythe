@@ -3,9 +3,10 @@ import { gsap } from 'gsap';
 import { PROJECT_DATA } from './mock-project-data';
 
 @Component({
-  selector: 'app-project-data',
-  templateUrl: './project-data.component.html',
-  styleUrls: ['./project-data.component.scss']
+    selector: 'app-project-data',
+    templateUrl: './project-data.component.html',
+    styleUrls: ['./project-data.component.scss'],
+    standalone: false
 })
 export class ProjectDataComponent implements AfterViewInit {
 

@@ -3,9 +3,10 @@ import { PROJECT_COLLABORATORS } from './../mock-collaborators';
 import { gsap } from 'gsap';
 
 @Component({
-  selector: 'app-about-project',
-  templateUrl: './about-project.component.html',
-  styleUrls: ['./about-project.component.scss']
+    selector: 'app-about-project',
+    templateUrl: './about-project.component.html',
+    styleUrls: ['./about-project.component.scss'],
+    standalone: false
 })
 export class AboutProjectComponent implements AfterViewInit {
 

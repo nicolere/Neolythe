@@ -5,7 +5,8 @@ import { takeUntil } from 'rxjs/operators';
 const DEFAULT_ANIMATION_SPEED: number = 8;
 
 @Directive({
-    selector: '[appAnimatedCounter]'
+    selector: '[appAnimatedCounter]',
+    standalone: false
 })
 
 export class AnimatedCounterDirective implements OnInit, OnDestroy {

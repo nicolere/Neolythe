@@ -6,11 +6,12 @@ import { ScreenObserverService } from './service/screen-observer.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'], 
-  animations: [routeTransitionAnimations],
-  providers: [ScreenObserverService]
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    animations: [routeTransitionAnimations],
+    providers: [ScreenObserverService],
+    standalone: false
 })
 export class AppComponent implements OnDestroy {
 
