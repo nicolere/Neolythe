@@ -1,9 +1,9 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, Inject, OnDestroy } from '@angular/core';
 import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { routeTransitionAnimations } from './route-animations-transitions';
-import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { ScreenObserverService } from './service/screen-observer.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,21 +14,23 @@ import { ScreenObserverService } from './service/screen-observer.service';
 })
 export class AppComponent implements OnDestroy {
 
+  @Inject(Router) router: Router;
+
   watcher: Subscription;
-  activeMediaQuery: any = [];
+  // activeMediaQuery: any = [];
 
   public isSmallDevice: boolean = false;
   public currentNavigationPath: string = "";
   
-  constructor(private router: Router, private screenObserverService: ScreenObserverService) {
-    this.watcher = screenObserverService.getActiveMediaQuery()
-    .subscribe((changes: string[]) => {
-        changes.includes('md') || changes.includes('sm') || changes.includes('xs') 
-        ? this.isSmallDevice = true
-        : this.isSmallDevice = false   
-      });
+  constructor() {
+    // this.watcher = screenObserverService.getActiveMediaQuery()
+    // .subscribe((changes: string[]) => {
+    //     changes.includes('md') || changes.includes('sm') || changes.includes('xs') 
+    //     ? this.isSmallDevice = true
+    //     : this.isSmallDevice = false   
+    //   });
 
-    router.events
+    this.router.events
     .pipe(
       filter(event => event instanceof NavigationEnd)
     )

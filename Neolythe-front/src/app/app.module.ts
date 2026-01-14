@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { GlobalMaterialModule } from './material-module';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,8 +26,6 @@ import { AnimatedCounterDirective } from './directives/animated-counter.directiv
     BrowserModule,
     BrowserAnimationsModule,
     GlobalMaterialModule,
-    FlexLayoutModule,
-    IvyCarouselModule,
     AppRoutingModule
   ],
   providers: [],
