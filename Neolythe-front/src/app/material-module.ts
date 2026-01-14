@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
+import {MatLegacyCardModule as MatCardModule} from '@angular/material/legacy-card';
 import {MatIconModule} from '@angular/material/icon'
-import {MatButtonModule} from '@angular/material/button';
+import {MatLegacyButtonModule as MatButtonModule} from '@angular/material/legacy-button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatListModule} from '@angular/material/list';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatLegacyListModule as MatListModule} from '@angular/material/legacy-list';
+import {MatLegacySlideToggleModule as MatSlideToggleModule} from '@angular/material/legacy-slide-toggle';
 
 @NgModule({
     exports: [
