@@ -6,11 +6,11 @@ div.landing-cristals-about {
 
     div.neolythe-about-description {
         height: 50%;
-
+        margin-top: 4vh;
+        
         @media screen and (min-width: 960px) {
             margin-top: 10vh !important;
         }
-        margin-top: 4vh;
 
         h2.description-title {
             width: 100%;
@@ -72,46 +72,46 @@ div.landing-cristals-about {
             font-size: 2.6em;
         }
 
-        carousel#faces-carousel {
-            @media screen and (min-width: 960px) {
-                margin-top: 11vh !important;
-            }
-            @media screen and (max-width: 960px) {
-                margin-top: 0.8em !important;
-                margin-left: 17vw;
-            }
-            div.carousel-cell {
-                opacity: 0.9;
-                text-align: center;
+        // carousel#faces-carousel {
+        //     @media screen and (min-width: 960px) {
+        //         margin-top: 11vh !important;
+        //     }
+        //     @media screen and (max-width: 960px) {
+        //         margin-top: 0.8em !important;
+        //         margin-left: 17vw;
+        //     }
+        //     div.carousel-cell {
+        //         opacity: 0.9;
+        //         text-align: center;
 
-                img.profil-picture {
-                    height: 71%;
-                    @media screen and (max-width: 960px) {
-                        border-radius: 52% 48% 49% 51% / 40% 40% 60% 60%  ;
-                    }
-                    @media screen and (min-width: 960px) {
-                        border-radius: 3em 3em 5rem 5rem;
-                    }
-                }
-                div.social-links a {
-                    margin-left: 1vh;
+        //         img.profil-picture {
+        //             height: 71%;
+        //             @media screen and (max-width: 960px) {
+        //                 border-radius: 52% 48% 49% 51% / 40% 40% 60% 60%  ;
+        //             }
+        //             @media screen and (min-width: 960px) {
+        //                 border-radius: 3em 3em 5rem 5rem;
+        //             }
+        //         }
+        //         div.social-links a {
+        //             margin-left: 1vh;
 
-                    mat-icon.social-links--item {
-                        font-size: 1.9rem;
-                    }
-                    .social-links--item {
-                        margin-top: 0.2rem;
-                        color: white;
-                        width: 2.1rem;
-                        height: 2.1rem;
-                        transition: transform .2s;
+        //             mat-icon.social-links--item {
+        //                 font-size: 1.9rem;
+        //             }
+        //             .social-links--item {
+        //                 margin-top: 0.2rem;
+        //                 color: white;
+        //                 width: 2.1rem;
+        //                 height: 2.1rem;
+        //                 transition: transform .2s;
 
-                        &:hover {
-                            transform: scale(1.25);
-                        }
-                    }
-                }
-            }
-        }
+        //                 &:hover {
+        //                     transform: scale(1.25);
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     }
 }

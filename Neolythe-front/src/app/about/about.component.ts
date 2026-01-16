@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { AboutProjectComponent } from './about-project/about-project.component';
+import { ProjectDataComponent } from './project-data/project-data.component';
 
 @Component({
     selector: 'app-about',
     templateUrl: './about.component.html',
     styleUrls: ['./about.component.scss'],
-    standalone: false
+    imports: [AboutProjectComponent, ProjectDataComponent],
+    standalone: true
 })
 export class AboutComponent implements OnInit {
 

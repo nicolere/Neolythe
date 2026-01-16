@@ -1,12 +1,17 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { gsap } from 'gsap';
 import { PROJECT_DATA } from './mock-project-data';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { AnimatedCounterDirective } from 'src/app/directives/animated-counter.directive';
+import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-project-data',
     templateUrl: './project-data.component.html',
     styleUrls: ['./project-data.component.scss'],
-    standalone: false
+    imports: [NgIf, MatCardModule, MatIconModule, AnimatedCounterDirective],
+    standalone: true
 })
 export class ProjectDataComponent implements AfterViewInit {
 

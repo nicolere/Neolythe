@@ -6,7 +6,7 @@ const DEFAULT_ANIMATION_SPEED: number = 8;
 
 @Directive({
     selector: '[appAnimatedCounter]',
-    standalone: false
+    standalone: true
 })
 
 export class AnimatedCounterDirective implements OnInit, OnDestroy {
@@ -17,12 +17,12 @@ export class AnimatedCounterDirective implements OnInit, OnDestroy {
 
     staticText: string;
 
-    private $destroyed = new Subject<void>();
+    private readonly $destroyed = new Subject<void>();
     private startingValue: number = 0;
 
     constructor(
-        private el: ElementRef<HTMLElement>, 
-        private renderer: Renderer2
+        private readonly el: ElementRef<HTMLElement>, 
+        private readonly renderer: Renderer2
     ) {}
 
     ngOnInit(): void {

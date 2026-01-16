@@ -1,36 +1,27 @@
-import { Component, Inject, OnDestroy } from '@angular/core';
-import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
-import { routeTransitionAnimations } from './route-animations-transitions';
+import { Component, } from '@angular/core';
+import { Router, NavigationEnd,  RouterModule } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { ScreenObserverService } from './service/screen-observer.service';
-import { Subscription } from 'rxjs';
+import { LeftNavbarComponent } from './left-navbar/left-navbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { NgIf } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    animations: [routeTransitionAnimations],
-    providers: [ScreenObserverService],
-    standalone: false
+    imports : [NgIf, RouterModule, MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule, LeftNavbarComponent],
+    standalone: true
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent {
 
-  @Inject(Router) router: Router;
-
-  watcher: Subscription;
-  // activeMediaQuery: any = [];
-
+  // TODO : Refacto small device only for sidenav mode behavior
   public isSmallDevice: boolean = false;
   public currentNavigationPath: string = "";
   
-  constructor() {
-    // this.watcher = screenObserverService.getActiveMediaQuery()
-    // .subscribe((changes: string[]) => {
-    //     changes.includes('md') || changes.includes('sm') || changes.includes('xs') 
-    //     ? this.isSmallDevice = true
-    //     : this.isSmallDevice = false   
-    //   });
-
+  constructor(protected router: Router) {
     this.router.events
     .pipe(
       filter(event => event instanceof NavigationEnd)
@@ -38,13 +29,5 @@ export class AppComponent implements OnDestroy {
     .subscribe((event: NavigationEnd) => {
       this.currentNavigationPath = event.url;
     })
-  }
-
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animationState'];
-  }
-
-  ngOnDestroy(): void {
-    this.watcher.unsubscribe();
   }
 }

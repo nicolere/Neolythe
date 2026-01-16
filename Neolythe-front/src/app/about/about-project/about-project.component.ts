@@ -1,16 +1,18 @@
-import { Component, ElementRef, Input, AfterViewInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChild} from '@angular/core';
 import { PROJECT_COLLABORATORS } from './../mock-collaborators';
 import { gsap } from 'gsap';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
     selector: 'app-about-project',
     templateUrl: './about-project.component.html',
     styleUrls: ['./about-project.component.scss'],
-    standalone: false
+    imports: [MatIconModule, MatButtonModule],
+    standalone: true
 })
 export class AboutProjectComponent implements AfterViewInit {
 
-  @Input() isSmallDevice: boolean;
   @ViewChild('divDescription', {static: false}) el: ElementRef<HTMLDivElement>;
 
   public projectCollaborators = PROJECT_COLLABORATORS;
