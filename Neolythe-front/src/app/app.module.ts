@@ -3,7 +3,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
-import { AboutProjectComponent } from './about/about-project/about-project.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
@@ -13,8 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   declarations: [
     DashboardComponent,
-    AboutComponent,
-    AboutProjectComponent
+    AboutComponent
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

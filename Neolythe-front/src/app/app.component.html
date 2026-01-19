@@ -8,8 +8,12 @@
                 <mat-icon>menu</mat-icon>
             </button>
             <a href="/" class="muli-b text-smoothblack">Neolythe</a>
-            <span *ngIf="currentNavigationPath === '/dashboard'" class="overview poppins-m text-smoothblack">Overview</span>
-            <span *ngIf="currentNavigationPath === '/about'" class="overview poppins-m text-smoothblack">Informations</span>
+            @if(currentNavigationPath === '/dashboard') {
+                <span class="overview poppins-m text-smoothblack">Overview</span>
+            }
+            @if(currentNavigationPath === '/about') {
+                <span class="overview poppins-m text-smoothblack">Informations</span>
+            }
         </mat-toolbar>
 
         <div class="row">

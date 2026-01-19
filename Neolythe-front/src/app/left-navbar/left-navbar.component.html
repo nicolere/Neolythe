@@ -12,11 +12,13 @@
   </div>
 
   <mat-nav-list>
-    <mat-list-item *ngFor="let link of navigationLinks" [routerLink]="link.routerLink" 
-    routerLinkActive="{{ link.routerLinkActive ? 'active' : '' }}" class="text-smoothblack poppins-m">
-      <mat-icon>{{ link.iconName }}</mat-icon>
-      <a>{{ link.linkName }}</a>
-    </mat-list-item>
+    @for (link of navigationLinks; track link.linkName) {
+       <mat-list-item [routerLink]="link.routerLink" routerLinkActive="{{ link.routerLinkActive ? 'active' : '' }}" 
+        class="text-smoothblack poppins-m">
+        <mat-icon>{{ link.iconName }}</mat-icon>
+        <a>{{ link.linkName }}</a>
+      </mat-list-item>
+    }
   </mat-nav-list>
 
   <section class="flex column dark-mode-copyright-content">

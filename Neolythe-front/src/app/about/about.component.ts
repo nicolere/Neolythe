@@ -1,29 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { AboutProjectComponent } from './about-project/about-project.component';
-import { ProjectDataComponent } from './project-data/project-data.component';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-about',
     templateUrl: './about.component.html',
     styleUrls: ['./about.component.scss'],
-    imports: [AboutProjectComponent, ProjectDataComponent],
-    standalone: true
+    standalone: false
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
 
-  watcher: Subscription;
   public isSmallDevice: boolean = false;
 
   constructor() {
-    // this.watcher = screenObserverService.getActiveMediaQuery()
-    // .subscribe((changes: string[]) => {
-    //       changes.includes('sm') || changes.includes('xs') 
-    //       ? this.isSmallDevice = true
-    //       : this.isSmallDevice = false   
-    //   });
   }
 
-  ngOnInit(): void {
-  }
 }
