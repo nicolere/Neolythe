@@ -1,4 +1,4 @@
-@import 'theme.scss';
+@use 'theme.scss';
 
 // Global Fonts imports
 @font-face {
@@ -100,4 +100,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .carousel-dots {
   bottom: -1vh !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
 }

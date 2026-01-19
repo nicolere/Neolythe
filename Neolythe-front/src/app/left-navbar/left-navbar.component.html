@@ -1,7 +1,7 @@
-<div fxLayout="column" class="left-navbar">
+<div class="flex column left-navbar">
 
-  <div fxLayout="row">
-    <mat-card id="current-rate" class="positiv" fxFlex="77" fxFlexOffset="10">
+  <div class="row">
+    <mat-card id="current-rate" class="positiv">
       <mat-card-content>
         <p id="small-title" class="muli-b text-white">Current rate</p>
         <span id="rate-sigle" class="poppins-sb text-white">
@@ -12,19 +12,21 @@
   </div>
 
   <mat-nav-list>
-    <mat-list-item *ngFor="let link of navigationLinks" routerLink="{{ link.routerLink }}" 
-    routerLinkActive="{{ link.routerLinkActive ? 'active' : '' }}" class="text-smoothblack poppins-m">
-      <mat-icon matListIcon>{{ link.iconName }}</mat-icon>
-      <a>{{ link.linkName }}</a>
-    </mat-list-item>
+    @for (link of navigationLinks; track link.linkName) {
+       <mat-list-item [routerLink]="link.routerLink" routerLinkActive="{{ link.routerLinkActive ? 'active' : '' }}" 
+        class="text-smoothblack poppins-m">
+        <mat-icon>{{ link.iconName }}</mat-icon>
+        <a>{{ link.linkName }}</a>
+      </mat-list-item>
+    }
   </mat-nav-list>
 
-  <section fxFlex class="dark-mode-copyright-content">
+  <section class="flex column dark-mode-copyright-content">
     <div id="slider-and-copyright">
-      <mat-slide-toggle fxFlex="66" fxFlexOffset="20" color="green" class="slide-toggle-dark-mode">Dark Mode</mat-slide-toggle>
+      <mat-slide-toggle color="green" class="slide-toggle-dark-mode">Dark Mode</mat-slide-toggle>
     </div>
     <div>
-      <p id="copyright-text" fxFlex="81" fxFlexOffset="9" class="poppins-r text-lightgrey">© Copyright Personal Project</p>
+      <p id="copyright-text" class="poppins-r text-lightgrey">© Copyright Personal Project</p>
     </div>
   </section>
 </div>
